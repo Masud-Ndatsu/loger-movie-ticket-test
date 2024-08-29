@@ -4,7 +4,8 @@ const movies = require("../data/movieList");
 
 require("dotenv").config();
 
-const mongoUri = process.env.MONGO_URI || "mongodb://localhost:27017/yourdb";
+const mongoUri =
+  process.env.MONGO_URI || "mongodb://localhost:27017/loger-tickets";
 
 const seedMovies = async () => {
   try {
