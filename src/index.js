@@ -5,7 +5,7 @@ const ticketRoutes = require("./routes/ticket.route");
 const userRoutes = require("./routes/user.route");
 const movieRoutes = require("./routes/movie.route");
 const { default: axios } = require("axios");
-
+require("./seed/movieSeed");
 connectDB();
 
 const app = express();

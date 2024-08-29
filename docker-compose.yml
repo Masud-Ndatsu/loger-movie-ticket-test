@@ -1,0 +1,28 @@
+version: "3.7"
+services:
+  node-app:
+    build: .
+    ports:
+      - "4000:4000"
+    volumes:
+      - ./:/app
+      - /app/node_modules
+    environment:
+      - PORT=4000
+      - MONGODB_URI=mongodb://mongo:27017/cuzradio
+      - MONGODB_URI_TEST=mongodb://mongo:27017/cuzradio-test
+      - MONGODB_URI_PROD=mongodb://mongo:27017/cuzradio
+      - JWT_SECRET=mynewjsonwebtoken
+      - JWT_EXPIRES_IN=1hr
+    depends_on:
+      - mongo
+
+  mongo:
+    image: mongodb/mongodb-community-server:latest
+    ports:
+      - "27017:27017"
+    volumes:
+      - mongo-data:/data/db
+
+volumes:
+  mongo-data:
