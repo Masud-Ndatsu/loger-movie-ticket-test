@@ -5,7 +5,7 @@ This API provides routes for managing users, movies, and tickets, with authentic
 - **ExpressJS**
 - **NodeJS**
 - **MongoDB**
-  (latest stable versions)
+
 
 ## Table of Contents
 
